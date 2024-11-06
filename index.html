@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        html {
+            background: black;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            height: 300px;
+            width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -150px 0 0 -150px;
+        }
+
+        .square {
+            height: 94%;
+            width: 94%;
+            background: rgb(0, 255, 234);
+            /* default color */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -47% 0 0 -47%;
+        }
+
+        .black {
+            background: rgb(0, 0, 0);
+            animation: rotate 300s infinite linear;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+
+          
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+
+    <label>Rotation speed (seconds):</label>
+    <input oninput="changeRotationSpeed()" type="number" min="1" id="textInput"
+        placeholder="Enter seconds for rotation speed">
+
+    <div class="container">
+        <div class="square black">
+            <div class="square">
+                <div class="square black">
+                    <div class="square">
+                        <div class="square black">
+                            <div class="square">
+                                <div class="square black">
+                                    <div class="square">
+                                        <div class="square black">
+                                            <div class="square">
+                                                <div class="square black">
+                                                    <div class="square">
+                                                        <div class="square black">
+                                                            <div class="square">
+                                                                <div class="square black">
+                                                                    <div class="square">
+                                                                        <div class="square black">
+                                                                            <div class="square">
+                                                                                <div class="square black">
+                                                                                    <div class="square">
+                                                                                        <div class="square black">
+                                                                                            <div class="square">
+                                                                                                <div
+                                                                                                    class="square black">
+                                                                                                    <div class="square">
+
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function changeRotationSpeed() {
+            let rotationSpeed = document.getElementById('textInput').value;
+            const blackSquares = document.getElementsByClassName('black');
+
+            // Loop through each black square and update the animation speed
+            for (let i = 0; i < blackSquares.length; i++) {
+                blackSquares[i].style.animation = `rotate ${rotationSpeed}s infinite linear`;
+            }
+        }
+    </script>
+</body>
+
+</html>
